@@ -8,13 +8,16 @@ $(function($){
     if(typeof callback == 'function'){ // INPUT FORM
       
       // event input
-      $this.off('input','input[type=text], textarea, [contenteditable="true"]').on('input','input[type=text], textarea, [contenteditable="true"]',function(e){
+      $this.off('input','input[type=text], textarea, [contenteditable="true"]').on('input','input[type=text], input[type=number], textarea, [contenteditable="true"]',function(e){
         let val = $(this).attr('contenteditable');
         if(val == 'true') { val = $(this).text(); }
         else { val = $(this).val(); }
 
+        let name = $(this).attr('data-name');
+        if(name == undefined) name = $(this).attr('name');
+
           var res = {
-            name:$(this).attr('name'),
+            name:name,
             value:val,
             type:'input',
             form:getAllDataOfForm(),
@@ -30,7 +33,8 @@ $(function($){
           name:name,
           type:'button',
           form:getAllDataOfForm(),
-          element:this
+          element:this,
+          target:e.target
         };
         callback(res);
       });
@@ -63,7 +67,7 @@ $(function($){
       var getAllDataOfForm = function(){
         var dataForm = {};
         // input, textarea
-        $this.find($('input[type=text],textarea')).each(function(i,e){
+        $this.find($('input[type=text],textarea,input[type=number]')).each(function(i,e){
             var name = $(e).attr('name');
             var value = $(e).val();
             dataForm[name] = value;
@@ -83,7 +87,7 @@ $(function($){
     } else if(typeof callback == 'object') { // FILL FORM
       let data = callback;
       if(data === null){
-        $this.find($('input[type=text],textarea')).each(function(i,e){
+        $this.find($('input[type=text],textarea,input[type=number]')).each(function(i,e){
             var name = $(e).val('');
         });
         // checkbox
