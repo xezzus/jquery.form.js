@@ -1,7 +1,7 @@
 # Examples
 
 
-```
+```html
 <div id="form">
   <div><input type="text" name="name"></div>
   <div><input type="text" name="email"></div>
@@ -10,7 +10,7 @@
 </div>
 ```
 
-```
+```javascript
 $(function(){
   $('#form').getform(function(e){
     console.log(e);
@@ -18,7 +18,7 @@ $(function(){
 });
 ```
 
-```
+```json
 {
  "element":[Object],
  "form":{
