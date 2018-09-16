@@ -1,0 +1,23 @@
+{
+  "name": "getform",
+  "description": "Gets data from all types of html forms",
+  "main": "jquery.getform.js",
+  "authors": [
+    "Buturlakin Andrey"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "html",
+    "form",
+    "javascript",
+    "action"
+  ],
+  "homepage": "https://github.com/xezzus/jquery.getform.js#readme",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
