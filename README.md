@@ -4,7 +4,7 @@
 bower install getform
 ```
 
-# Examples
+# Example
 
 ```html
 <div id="form">
