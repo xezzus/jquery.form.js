@@ -1,5 +1,10 @@
-# Examples
+# Install
 
+```cmd
+bower install getform
+```
+
+# Examples
 
 ```html
 <div id="form">
